@@ -86,3 +86,36 @@ Esta guía recopila los aprendizajes y las soluciones a problemas técnicos comu
      pnpm slidev --open <archivo>.md --force
      ```
   2. **En el Navegador (Hard Reload):** Slidev guarda caché de sesión agresiva en el cliente. Haz una recarga limpia usando **`Ctrl + F5`** (Windows/Linux) o **`Cmd + Shift + R`** (Mac).
+
+---
+
+## 🎨 7. Ubicación de style.css en Proyectos Modularizados
+* **Problema:** La presentación se compila con fondo completamente blanco, tipografía estándar del navegador y sin los bordes glassmorphic del tema Gamma "Icebreaker", a pesar de tener un archivo `style.css` correcto en la raíz del proyecto.
+* **Solución:** Slidev busca el archivo de estilos en la carpeta del archivo Markdown de entrada (principal). Si tu presentación está modularizada dentro de un subdirectorio (ej. `diagramas-secuencia/diagramas-secuencia.md`), debes copiar el archivo `style.css` de la raíz en esa misma carpeta (`diagramas-secuencia/style.css`), de lo contrario Vite ignorará el archivo global.
+
+---
+
+## 📊 8. Desbordes Verticales en Diagramas y Lógica Anidada
+* **Problema:** En diagramas de secuencia largos con bloques `loop` o `alt`, o diagramas de arquitectura verticales (`graph TD`) con muchos componentes, el gráfico y el texto al pie desbordan hacia abajo, perdiéndose fuera de la pantalla.
+* **Solución:**
+  1. **Evitar diagramas verticales anchos:** En diagramas de arquitectura C4 extensos, prefiere una dirección horizontal (`graph LR`) utilizando subgrupos para balancear y acotar la altura del gráfico, aplicando luego una clase de escalado personalizada en `style.css` (ej. `zoom: 1.4 !important;`).
+  2. **Usar diapositivas compactas:** Para slides que contengan lógica anidada y explicaciones de texto obligatorias, define la clase `compact-slide` en el frontmatter del slide:
+     ```yaml
+     ---
+     class: compact-slide
+     ---
+     ```
+     Y define en `style.css` las siguientes reducciones:
+     ```css
+     .compact-slide {
+       padding-top: 1rem !important;
+       padding-bottom: 1rem !important;
+     }
+     .compact-slide h2, .compact-slide p {
+       margin-bottom: 0.5rem !important;
+     }
+     .compact-slide .mermaid {
+       zoom: 0.65 !important; /* Achica el diagrama lo suficiente */
+     }
+     ```
+
