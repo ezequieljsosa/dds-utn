@@ -90,3 +90,35 @@ src: ./pages/bucles-alternativas.md
 ---
 src: ./pages/conclusiones.md
 ---
+
+---
+src: ./pages/actividad-practica.md
+---
+
+---
+src: ./pages/resolucion-caso-arquitectura.md
+---
+
+---
+src: ./pages/resolucion-caso-secuencia.md
+---
+
+---
+src: ./pages/resolucion-caso-transicion.md
+---
+
+---
+src: ./pages/resolucion-caso-cotizacion.md
+---
+
+---
+src: ./pages/resolucion-caso-validacion.md
+---
+
+---
+src: ./pages/resolucion-caso-cobro.md
+---
+
+---
+src: ./pages/resolucion-caso-teoria.md
+---
