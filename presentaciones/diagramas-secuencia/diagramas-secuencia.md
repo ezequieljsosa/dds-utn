@@ -20,6 +20,10 @@ src: ./pages/secuencia-tradicional.md
 ---
 
 ---
+src: ./pages/referencia-secuencia.md
+---
+
+---
 src: ./pages/transicion.md
 ---
 
