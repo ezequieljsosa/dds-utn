@@ -40,7 +40,11 @@ jobs:
         working-directory: presentaciones
 
       - name: Build presentation
-        run: pnpm run build -- --base /dds-utn/
+        run: pnpm slidev build diagramas-secuencia/diagramas-secuencia.md --out dist/diagramas-secuencia --base /dds-utn/diagramas-secuencia/
+        working-directory: presentaciones
+
+      - name: Generate index page
+        run: node build-index.js
         working-directory: presentaciones
 
       - name: Setup Pages
@@ -49,7 +53,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: presentaciones/diagramas-secuencia/dist
+          path: presentaciones/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
