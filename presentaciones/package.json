@@ -1,0 +1,16 @@
+{
+  "name": "presentaciones",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build diagramas-secuencia/diagramas-secuencia.md",
+    "dev": "slidev --open diagramas-secuencia/diagramas-secuencia.md",
+    "export": "slidev export diagramas-secuencia/diagramas-secuencia.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.17.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.33"
+  }
+}
