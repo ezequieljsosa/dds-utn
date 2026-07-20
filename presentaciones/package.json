@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "build": "slidev build diagramas-secuencia/diagramas-secuencia.md",
+    "build:all": "node build-all.js",
+    "preview": "pnpm build:all && npx serve dist",
     "dev": "slidev --open diagramas-secuencia/diagramas-secuencia.md",
     "export": "slidev export diagramas-secuencia/diagramas-secuencia.md"
   },

@@ -39,12 +39,8 @@ jobs:
         run: pnpm install --frozen-lockfile
         working-directory: presentaciones
 
-      - name: Build presentation
-        run: pnpm slidev build diagramas-secuencia/diagramas-secuencia.md --out ../dist/diagramas-secuencia --base /dds-utn/diagramas-secuencia/
-        working-directory: presentaciones
-
-      - name: Generate index page
-        run: node build-index.js
+      - name: Build all presentations and index page
+        run: node build-all.js
         working-directory: presentaciones
 
       - name: Setup Pages

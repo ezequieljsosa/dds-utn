@@ -1,6 +1,8 @@
 ---
 theme: default
 title: Diagramas de Secuencia para Sistemas Distribuidos
+favicon: /utn-2.svg
+routerMode: hash
 transition: slide-left
 drawings:
   persist: false
